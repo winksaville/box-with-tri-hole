@@ -5,4 +5,3 @@ edition = "2021"
 
 [dependencies]
 fj = { git = "https://github.com/hannobraun/fornjot", rev = "9c51e6f8beba413818753cf7acb2f4810f080167" }
-clap = { version = "4.5", features = ["derive"] }
