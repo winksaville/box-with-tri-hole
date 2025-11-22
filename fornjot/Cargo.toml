@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-fj = { git = "https://github.com/hannobraun/fornjot", rev = "9c51e6f8beba413818753cf7acb2f4810f080167" }
+fj = { git = "https://github.com/winksaville/fornjot", branch = "dep-box-with-tri-hole" }
