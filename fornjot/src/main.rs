@@ -4,7 +4,7 @@ fn main() -> fj::Result {
     let mut fj = fj::Instance::new();
 
     // Create the cuboid model
-    let model = cuboid::model([40.0, 40.0, 15.0], &mut fj.core);
+    let model = box_with_tri_hole::model([40.0, 40.0, 15.0], &mut fj.core);
 
     // Create fs::Args::parse and save to "box-with-tri-hole.stl"
     let mut args = fj::Args::parse();
