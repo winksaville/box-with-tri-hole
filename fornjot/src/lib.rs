@@ -25,15 +25,53 @@ fn rectangle_region(x: Scalar, y: Scalar, core: &mut fj::core::Core) -> Region {
     )
 }
 
+#[inline]
+fn equilateral_tri_hole(base: Scalar, height: Scalar, core: &mut fj::core::Core) -> Region {
+    // For an equilateral triangle, calculate the vertices
+    // Center the triangle at the origin
+    // The base parameter defines the side length
+    // The height parameter is for positioning (y-offset from center)
+
+    // For an equilateral triangle with side length 'base':
+    // - Height from base to apex: base * sqrt(3) / 2
+    // - Distance from center to vertex: base / sqrt(3)
+
+    let half_base = base / 2.;
+    let tri_height = base * Scalar::from(3.0f64.sqrt()) / 2.;
+    let centroid_to_base = tri_height / 3.;
+    let centroid_to_apex = tri_height * 2. / 3.;
+
+    // Define vertices in CLOCKWISE order (since this is a hole)
+    // Starting from top apex, going clockwise
+    let apex = [Scalar::ZERO, height + centroid_to_apex];
+    let bottom_right = [half_base, height - centroid_to_base];
+    let bottom_left = [-half_base, height - centroid_to_base];
+
+    Region::polygon(
+        [apex, bottom_right, bottom_left],
+        core.layers.topology.surfaces.space_2d(),
+        core,
+    )
+}
+
 pub fn model(size: impl Into<Vector<3>>, core: &mut fj::core::Core) -> Solid {
     let [x, y, z] = size.into().components;
+
+    // For now hard code size  of hole
+    let tri_base = Scalar::from(15.);
+    let tri_height = Scalar::from(15.);
 
     let bottom_surface = core.layers.topology.surfaces.xy_plane();
     let sweep_path = Vector::from([Scalar::ZERO, Scalar::ZERO, -z]);
 
     Sketch::empty(&core.layers.topology)
         .add_regions(
-            [rectangle_region(x, y, core)],
+            [
+                // Counter clockwise as this is outer bondary
+                rectangle_region(x, y, core),
+                // Clockwise order as this is an inner region
+                equilateral_tri_hole(tri_base, tri_height, core),
+            ],
             core,
         )
         .sweep_sketch(bottom_surface, sweep_path, core)
@@ -43,8 +81,8 @@ pub fn model(size: impl Into<Vector<3>>, core: &mut fj::core::Core) -> Solid {
 mod tests {
     use super::*;
     use fj::core::{
-        validation::{ValidationConfig, ValidationError},
         Core,
+        validation::{ValidationConfig, ValidationError},
     };
     use fj::math::Winding;
 
@@ -194,7 +232,9 @@ mod tests {
                     // Convert from curve coords to surface coords
                     if let Some(curve_geom) = core.layers.geometry.of_curve(curve) {
                         if let Some(local_curve) = curve_geom.local_on(&surface) {
-                            let pos_surface = local_curve.path.point_from_path_coords(pos_on_curve.position);
+                            let pos_surface = local_curve
+                                .path
+                                .point_from_path_coords(pos_on_curve.position);
                             positions.push(pos_surface);
                         }
                     }
@@ -227,7 +267,13 @@ mod tests {
                 found,
                 "Expected corner {:?} not found in positions {:?}",
                 expected,
-                positions.iter().map(|p| [p.coords.components[0].into_f64(), p.coords.components[1].into_f64()]).collect::<Vec<_>>()
+                positions
+                    .iter()
+                    .map(|p| [
+                        p.coords.components[0].into_f64(),
+                        p.coords.components[1].into_f64()
+                    ])
+                    .collect::<Vec<_>>()
             );
         }
     }

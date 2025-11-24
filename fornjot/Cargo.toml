@@ -4,11 +4,15 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-fj = { git = "https://github.com/winksaville/fornjot", branch = "dep-box-with-tri-hole" }
+fj = { path = "/home/wink/data/prgs/forks/fornjot/crates/fj" }
 
 [profile.release]
 incremental = false
 codegen-units = 1
+debug = false
+lto = true
+strip = true
+panic = "abort" # Save 2.5M
 
 [profile.dev]
 incremental = true
