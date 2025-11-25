@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-fj = { path = "/home/wink/data/prgs/forks/fornjot/crates/fj" }
+fj = { git = "https://github.com/winksaville/fornjot", branch = "dep-box-with-tri-hole" }
+#fj = { path = "/home/wink/data/prgs/forks/fornjot/crates/fj" }
 
 [profile.release]
 incremental = false

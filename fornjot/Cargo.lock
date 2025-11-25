@@ -641,6 +641,7 @@ checksum = "3a3076410a55c90011c298b04d0cfa770b00fa04e1e3c97d3f6c9de105a03844"
 [[package]]
 name = "fj"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "clap",
  "fj-core",
@@ -656,6 +657,7 @@ dependencies = [
 [[package]]
 name = "fj-core"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "fj-interop",
  "fj-math",
@@ -670,6 +672,7 @@ dependencies = [
 [[package]]
 name = "fj-export"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "fj-interop",
  "fj-math",
@@ -682,6 +685,7 @@ dependencies = [
 [[package]]
 name = "fj-interop"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "fj-math",
  "thiserror 2.0.17",
@@ -690,6 +694,7 @@ dependencies = [
 [[package]]
 name = "fj-math"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "approx",
  "decorum",
@@ -704,6 +709,7 @@ dependencies = [
 [[package]]
 name = "fj-viewer"
 version = "0.49.0"
+source = "git+https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4fa04748f7e332831b6de9da030c9a556"
 dependencies = [
  "bytemuck",
  "fj-interop",
