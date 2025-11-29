@@ -16,6 +16,26 @@ Current CAD systems:
  * [fornjot](./fornjot)
  * [csgrs](./csgrs)
 
+Overview:
+All three had no issues creating the model itself and exporting to stl format.
+Obvoiusly FreeCAD was completely GUI based and can't really compare directly
+toi csgrs and fornjot which are code based.
+
+Between csgrs and fornjot I found csgrs was simpler, but that also could
+because I'm more familiar with it. But fornjot and FreeCAD both created
+"perfect" meshes as opposed to csgrs which had some issues.
+
+Another interesting comparision was the build sizes between fornjot and csgrs.
+fornjot's release build was 10MB while csgrs was 0.5MB. The primary reason is
+the GUI dependencies in fornjot, In particular the top 4 are all GUI related
+and were 40% of the total size from bloat analysis:
+```
+1.7%  19.2%   4.5MiB naga
+1.1%  12.5%   2.9MiB wgpu_core
+0.7%   7.2%   1.7MiB wgpu_hal
+0.6%   6.5%   1.5MiB winit
+```
+
 ## Claude
 
 I've created two symlinks from `~/.claude/projects` to the repos `.claude/`
