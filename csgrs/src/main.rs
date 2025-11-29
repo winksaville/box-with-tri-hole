@@ -6,7 +6,7 @@ type Mesh = csgrs::mesh::Mesh<()>;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let width = 40.; // width of the box
     let length = 40.; // length of the box
-    let height = 15.; // height of the box
+    let height = 5.; // height of the box
     let diameter = 15.; // diameter of circle for the hole
     let segments = 3; // A 3 segment circle is a triangle
 
