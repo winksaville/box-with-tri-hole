@@ -72,8 +72,7 @@ wink@3900x 25-11-28T19:45:43.871Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs
 
 Bloat info on the binary crates:
 ```
-$ cargo bloat --crates target/release/box-with-tri-hole
-Warning: unused arguments left: ["target/release/box-with-tri-hole"].
+$ cargo bloat --crates
    Compiling either v1.15.0
    Compiling stable_deref_trait v1.2.1
    Compiling cfg-if v1.0.4
