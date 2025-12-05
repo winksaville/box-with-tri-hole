@@ -22,8 +22,9 @@ Obvoiusly FreeCAD was completely GUI based and can't really compare directly
 toi csgrs and fornjot which are code based.
 
 Between csgrs and fornjot I found csgrs was simpler, but that also could
-because I'm more familiar with it. But fornjot and FreeCAD both created
-"perfect" meshes as opposed to csgrs which had some issues.
+because I'm more familiar with it. All three created "perfect" meshes
+as measured using meshlab "Compute Topological Measures",
+this is not always the case.
 
 Another interesting comparision was the build sizes between fornjot and csgrs.
 fornjot's release build was 10MB while csgrs was 0.5MB. The primary reason is

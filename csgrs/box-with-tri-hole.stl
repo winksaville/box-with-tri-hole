@@ -1,47 +1,68 @@
 solid box-with-tri-hole
   facet normal 0.000000 0.000000 -1.000000
     outer loop
+      vertex -3.750000 -6.495191 0.000000
       vertex -20.000000 -20.000000 0.000000
       vertex -20.000000 -15.877132 0.000000
-      vertex 20.000000 -20.000000 0.000000
     endloop
   endfacet
   facet normal 0.000000 0.000000 -1.000000
     outer loop
+      vertex -20.000000 -20.000000 0.000000
+      vertex -3.750000 -6.495191 0.000000
+      vertex 20.000000 -20.000000 0.000000
+    endloop
+  endfacet
+  facet normal 0.000000 -0.000000 -1.000000
+    outer loop
+      vertex 7.500000 0.000000 0.000000
+      vertex 20.000000 -20.000000 0.000000
+      vertex -3.750000 -6.495191 0.000000
+    endloop
+  endfacet
+  facet normal 0.000000 -0.000000 -1.000000
+    outer loop
       vertex 20.000000 7.216878 0.000000
       vertex 20.000000 -20.000000 0.000000
-      vertex -20.000000 -15.877132 0.000000
+      vertex 7.500000 0.000000 0.000000
     endloop
   endfacet
   facet normal -0.000000 0.000000 -1.000000
     outer loop
-      vertex -20.000000 20.000000 0.000000
       vertex -3.750000 -6.495191 0.000000
       vertex -20.000000 -15.877132 0.000000
+      vertex -3.750000 6.495191 0.000000
     endloop
   endfacet
-  facet normal -0.000000 0.000000 -1.000000
+  facet normal 0.000000 0.000000 -1.000000
     outer loop
+      vertex -20.000000 20.000000 0.000000
+      vertex -3.750000 6.495191 0.000000
+      vertex -20.000000 -15.877132 0.000000
+    endloop
+  endfacet
+  facet normal 0.000000 0.000000 -1.000000
+    outer loop
+      vertex -3.750000 6.495191 0.000000
+      vertex -20.000000 20.000000 0.000000
       vertex -3.750000 20.000000 0.000000
-      vertex -3.750000 -6.495191 0.000000
-      vertex -20.000000 20.000000 0.000000
     endloop
   endfacet
-  facet normal -0.000000 0.000000 -1.000000
+  facet normal 0.000000 0.000000 -1.000000
     outer loop
       vertex -3.750000 20.000000 0.000000
       vertex 7.500000 0.000000 0.000000
       vertex -3.750000 6.495191 0.000000
     endloop
   endfacet
-  facet normal -0.000000 0.000000 -1.000000
+  facet normal 0.000000 0.000000 -1.000000
     outer loop
       vertex 7.500000 0.000000 0.000000
       vertex -3.750000 20.000000 0.000000
       vertex 20.000000 7.216878 0.000000
     endloop
   endfacet
-  facet normal -0.000000 0.000000 -1.000000
+  facet normal -0.000000 -0.000000 -1.000000
     outer loop
       vertex 20.000000 20.000000 0.000000
       vertex 20.000000 7.216878 0.000000
@@ -50,22 +71,43 @@ solid box-with-tri-hole
   endfacet
   facet normal 0.000000 0.000000 1.000000
     outer loop
+      vertex 7.500000 0.000000 5.000000
+      vertex -3.750000 -6.495191 5.000000
       vertex 20.000000 -20.000000 5.000000
+    endloop
+  endfacet
+  facet normal 0.000000 0.000000 1.000000
+    outer loop
+      vertex -20.000000 -20.000000 5.000000
+      vertex 20.000000 -20.000000 5.000000
+      vertex -3.750000 -6.495191 5.000000
+    endloop
+  endfacet
+  facet normal -0.000000 0.000000 1.000000
+    outer loop
+      vertex 7.500000 0.000000 5.000000
+      vertex 20.000000 -20.000000 5.000000
+      vertex 20.000000 7.216878 5.000000
+    endloop
+  endfacet
+  facet normal 0.000000 0.000000 1.000000
+    outer loop
+      vertex -3.750000 -6.495191 5.000000
       vertex -20.000000 -15.877132 5.000000
       vertex -20.000000 -20.000000 5.000000
     endloop
   endfacet
   facet normal 0.000000 0.000000 1.000000
     outer loop
-      vertex 20.000000 7.216878 5.000000
+      vertex -3.750000 6.495191 5.000000
       vertex -20.000000 -15.877132 5.000000
-      vertex 20.000000 -20.000000 5.000000
+      vertex -3.750000 -6.495191 5.000000
     endloop
   endfacet
   facet normal 0.000000 0.000000 1.000000
     outer loop
       vertex -20.000000 -15.877132 5.000000
-      vertex -3.750000 -6.495191 5.000000
+      vertex -3.750000 6.495191 5.000000
       vertex -20.000000 20.000000 5.000000
     endloop
   endfacet
@@ -73,10 +115,10 @@ solid box-with-tri-hole
     outer loop
       vertex -3.750000 20.000000 5.000000
       vertex -20.000000 20.000000 5.000000
-      vertex -3.750000 -6.495191 5.000000
+      vertex -3.750000 6.495191 5.000000
     endloop
   endfacet
-  facet normal 0.000000 -0.000000 1.000000
+  facet normal -0.000000 -0.000000 1.000000
     outer loop
       vertex -3.750000 6.495191 5.000000
       vertex 7.500000 -0.000000 5.000000
@@ -90,7 +132,7 @@ solid box-with-tri-hole
       vertex -3.750000 20.000000 5.000000
     endloop
   endfacet
-  facet normal 0.000000 -0.000000 1.000000
+  facet normal 0.000000 0.000000 1.000000
     outer loop
       vertex 20.000000 20.000000 5.000000
       vertex -3.750000 20.000000 5.000000
@@ -139,7 +181,7 @@ solid box-with-tri-hole
       vertex -3.750000 6.495191 0.000000
     endloop
   endfacet
-  facet normal 0.000000 -1.000000 0.000000
+  facet normal 0.000000 -1.000000 -0.000000
     outer loop
       vertex 20.000000 -20.000000 5.000000
       vertex -20.000000 -20.000000 0.000000
@@ -153,23 +195,37 @@ solid box-with-tri-hole
       vertex 20.000000 -20.000000 5.000000
     endloop
   endfacet
-  facet normal 0.000000 1.000000 -0.000000
+  facet normal 0.000000 1.000000 0.000000
     outer loop
-      vertex 20.000000 20.000000 5.000000
+      vertex -3.750000 20.000000 5.000000
       vertex -20.000000 20.000000 0.000000
       vertex -20.000000 20.000000 5.000000
     endloop
   endfacet
-  facet normal 0.000000 1.000000 -0.000000
+  facet normal 0.000000 1.000000 0.000000
     outer loop
+      vertex -3.750000 20.000000 5.000000
       vertex 20.000000 20.000000 0.000000
-      vertex -20.000000 20.000000 0.000000
-      vertex 20.000000 20.000000 5.000000
+      vertex -3.750000 20.000000 0.000000
     endloop
   endfacet
-  facet normal -1.000000 0.000000 0.000000
+  facet normal 0.000000 1.000000 0.000000
     outer loop
-      vertex -20.000000 20.000000 5.000000
+      vertex 20.000000 20.000000 5.000000
+      vertex 20.000000 20.000000 0.000000
+      vertex -3.750000 20.000000 5.000000
+    endloop
+  endfacet
+  facet normal 0.000000 1.000000 0.000000
+    outer loop
+      vertex -3.750000 20.000000 5.000000
+      vertex -3.750000 20.000000 0.000000
+      vertex -20.000000 20.000000 0.000000
+    endloop
+  endfacet
+  facet normal -1.000000 -0.000000 0.000000
+    outer loop
+      vertex -20.000000 -15.877132 5.000000
       vertex -20.000000 -20.000000 0.000000
       vertex -20.000000 -20.000000 5.000000
     endloop
@@ -177,22 +233,50 @@ solid box-with-tri-hole
   facet normal -1.000000 0.000000 0.000000
     outer loop
       vertex -20.000000 20.000000 0.000000
-      vertex -20.000000 -20.000000 0.000000
+      vertex -20.000000 -15.877132 0.000000
       vertex -20.000000 20.000000 5.000000
     endloop
   endfacet
-  facet normal 1.000000 -0.000000 0.000000
+  facet normal -1.000000 0.000000 0.000000
+    outer loop
+      vertex -20.000000 -15.877132 5.000000
+      vertex -20.000000 20.000000 5.000000
+      vertex -20.000000 -15.877132 0.000000
+    endloop
+  endfacet
+  facet normal -1.000000 0.000000 -0.000000
+    outer loop
+      vertex -20.000000 -15.877132 5.000000
+      vertex -20.000000 -15.877132 0.000000
+      vertex -20.000000 -20.000000 0.000000
+    endloop
+  endfacet
+  facet normal 1.000000 0.000000 0.000000
+    outer loop
+      vertex 20.000000 -20.000000 0.000000
+      vertex 20.000000 7.216878 0.000000
+      vertex 20.000000 7.216878 5.000000
+    endloop
+  endfacet
+  facet normal 1.000000 0.000000 0.000000
+    outer loop
+      vertex 20.000000 7.216878 0.000000
+      vertex 20.000000 20.000000 0.000000
+      vertex 20.000000 20.000000 5.000000
+    endloop
+  endfacet
+  facet normal 1.000000 0.000000 0.000000
     outer loop
       vertex 20.000000 20.000000 5.000000
-      vertex 20.000000 -20.000000 0.000000
-      vertex 20.000000 20.000000 0.000000
+      vertex 20.000000 7.216878 5.000000
+      vertex 20.000000 7.216878 0.000000
     endloop
   endfacet
   facet normal 1.000000 -0.000000 0.000000
     outer loop
       vertex 20.000000 -20.000000 5.000000
       vertex 20.000000 -20.000000 0.000000
-      vertex 20.000000 20.000000 5.000000
+      vertex 20.000000 7.216878 5.000000
     endloop
   endfacet
 endsolid box-with-tri-hole

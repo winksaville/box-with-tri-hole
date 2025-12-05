@@ -20,4 +20,5 @@ codegen-units = 16
 #csgrs = { version = "0.20.1", features = ["parallel"] }
 #csgrs = { version = "0.20.1" }
 #csgrs = { path = "../csgrs" } # local path for development
-csgrs = {  git = "https://github.com/timschmidt/csgrs.git", rev = "278e0254d2c8bfffe2e9021fd8120dd9ee1f60bb" }
+#csgrs = {  git = "https://github.com/timschmidt/csgrs.git", rev = "278e0254d2c8bfffe2e9021fd8120dd9ee1f60bb" }
+csgrs = {  git = "https://github.com/timschmidt/csgrs.git", branch = "main" }
