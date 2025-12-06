@@ -8,7 +8,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let length = 40.; // length of the box
     let height = 5.; // height of the box
     let diameter = 15.; // diameter of circle for the hole
-    let segments = 3; // A 3 segment circle is a triangle
+    let segments_string = std::env::args().nth(1).unwrap_or("3".to_string());
+    let segments: f64 = match segments_string.parse() {
+        Ok(v) => v,
+        _ => {
+            println!("Expected segments to be a number");
+            return Ok(());
+        }
+    };
+    if segments < 3.0 {
+        println!("Segements for the hole and must be >= 3");
+        return Ok(());
+    }
 
     // Simple box centered on the origin
     let mut cuboid =
@@ -24,11 +35,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         cuboid = cuboid.difference(&hole);
     }
 
-    let name: String = "box-with-tri-hole".into();
+    let vertices = cuboid.vertices().len();
+    let name: String = format!("box-with-hole_segments-{segments}_vertices-{vertices}").into();
     let shape: Vec<u8> = cuboid.to_stl_ascii(&name).into();
     let file_name: String = name + ".stl";
     println!("Writing file: {}", file_name);
-    std::fs::write("box-with-tri-hole.stl", shape).unwrap();
+    std::fs::write(file_name, shape).unwrap();
 
     Ok(())
 }

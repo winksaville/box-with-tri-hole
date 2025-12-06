@@ -1,4 +1,4 @@
-solid box-with-tri-hole
+solid box-with-hole_segments-3_vertices-54
   facet normal 0.000000 0.000000 -1.000000
     outer loop
       vertex -3.750000 -6.495191 0.000000
@@ -279,4 +279,4 @@ solid box-with-tri-hole
       vertex 20.000000 7.216878 5.000000
     endloop
   endfacet
-endsolid box-with-tri-hole
+endsolid box-with-hole_segments-3_vertices-54
