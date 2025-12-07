@@ -238,10 +238,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "box-with-tri-hole"
-version = "0.1.0"
+name = "box-with-hole"
+version = "0.2.0"
 dependencies = [
  "fj",
+ "fj-export",
+ "fj-interop",
 ]
 
 [[package]]

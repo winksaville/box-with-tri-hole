@@ -1,6 +1,6 @@
 # box-with-tri-hole
 
-A 40x40x5mm box with a triangular hole circumscribed by a circle with a 7.5mm radius:
+A 40x40x5mm box with a hole circumscribed by a circle with a 7.5mm radius:
 
 Implemented using [fornjot](https://fornjot.app/), b-rep CAD kernel
 written in Rust.
@@ -11,7 +11,13 @@ pointing to as things are changing.
 
 ## Usage
 
-Here I'm running after having done a clean:
+Note this generates `box-with-hole` since it takes an optional paramter specifying the segment-count
+```
+box-with-hole <segment-count>
+```
+
+Here I'm running with no parameter so it defaults to 3 segments, a triangular hole,
+and creates `box-with-hole_segments-3_vertices-54.stl`:
 ```
 wink@3900x 25-11-29T19:22:59.667Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
 $ cargo clean
@@ -22,6 +28,8 @@ $ cargo run --release
    Compiling unicode-ident v1.0.22
    Compiling quote v1.0.42
 ..
+   Compiling threemf v0.7.0
+   Compiling parry2d-f64 v0.25.3
    Compiling parry3d-f64 v0.25.3
    Compiling fj-math v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj-interop v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
@@ -30,12 +38,11 @@ $ cargo run --release
    Compiling wgpu-core-deps-windows-linux-android v27.0.0
    Compiling fj-viewer v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
-   Compiling box-with-tri-hole v0.1.0 (/home/wink/data/prgs/3dprinting/box-with-tri-hole/fornjot)
-    Finished `release` profile [optimized] target(s) in 1m 09s
-     Running `target/release/box-with-tri-hole`
-eth  base=15, half_base=7.5, tri_height=12.990381056766578, centroid_to_base=4.330127018922193, centroid_to_apex=8.660254037844386
-eth  apex=[0.0, 8.660254037844386], bottom_right=[7.5, -4.330127018922193], bottom_left=[-7.5, -4.330127018922193]
-wink@3900x 25-11-29T19:24:34.214Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+   Compiling box-with-hole v0.2.0 (/home/wink/data/prgs/3dprinting/box-with-tri-hole/fornjot)
+    Finished `release` profile [optimized] target(s) in 22.03s
+     Running `target/release/box-with-hole`
+Writing file: box-with-hole_segments-3.stl
+wink@3900x 25-12-07T06:28:53.161Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
 ```
 
 Using meshlab to inspect the object using menus
@@ -59,67 +66,90 @@ LOG: 0 Applied filter: Compute Topological Measures in 278 msec
 ```
 
 And here is a image:
-![box-with-tri-hold](./box-with-tri-hole.stl.png)
+![box-with-hole](./box-with-hole_segments-3.stl.png)
 
 ## Binary
 
-The binary is 10,055,240 bytes:
+The binary is 1,205,424 bytes:
 ```
-wink@3900x 25-11-29T19:36:24.158Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
-$ ls -l target/release/box-with-tri-hole
--rwxr-xr-x 2 wink users 10055240 Nov 29 11:24 target/release/box-with-tri-hole
-wink@3900x 25-11-29T19:36:35.141Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+wink@3900x 25-12-07T06:35:50.167Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+$ ls  -l target/release/box-with-hole
+-rwxr-xr-x 2 wink users 1205424 Dec  6 22:28 target/release/box-with-hole
+wink@3900x 25-12-07T06:36:10.672Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
 ```
 
 Bloat info on the binary crates:
 ```
-wink@3900x 25-11-29T19:38:58.174Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+wink@3900x 25-12-07T06:36:10.672Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
 $ cargo bloat --crates
    Compiling proc-macro2 v1.0.103
-   Compiling unicode-ident v1.0.22
    Compiling quote v1.0.42
-..
-   Compiling threemf v0.7.0
+   Compiling unicode-ident v1.0.22
+   ..
    Compiling parry2d-f64 v0.25.3
-   Compiling parry3d-f64 v0.25.3
+   Compiling wgpu-core-deps-windows-linux-android v27.0.0
    Compiling fj-math v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj-interop v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
-   Compiling fj-core v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj-export v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
-   Compiling wgpu-core-deps-windows-linux-android v27.0.0
+   Compiling fj-core v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj-viewer v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
    Compiling fj v0.49.0 (https://github.com/winksaville/fornjot?branch=dep-box-with-tri-hole#307e52b4)
-   Compiling box-with-tri-hole v0.1.0 (/home/wink/data/prgs/3dprinting/box-with-tri-hole/fornjot)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.78s
-    Analyzing target/debug/box-with-tri-hole
+   Compiling box-with-hole v0.2.0 (/home/wink/data/prgs/3dprinting/box-with-tri-hole/fornjot)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 28.95s
+    Analyzing target/debug/box-with-hole
 
 File  .text     Size Crate
-1.7%  19.2%   4.5MiB naga
-1.1%  12.5%   2.9MiB wgpu_core
-0.7%   7.2%   1.7MiB wgpu_hal
-0.6%   6.5%   1.5MiB winit
-0.5%   5.6%   1.3MiB fj_core
-0.4%   4.6%   1.1MiB std
-0.3%   3.6% 861.3KiB clap_builder
-0.3%   3.0% 726.1KiB tiny_skia
-0.2%   2.6% 633.0KiB regex_automata
-0.2%   2.2% 538.5KiB image
-0.2%   2.0% 492.9KiB regex_syntax
-0.1%   1.5% 365.2KiB wgpu
-0.1%   1.5% 363.8KiB tracing_subscriber
-0.1%   1.4% 342.4KiB fj_viewer
-0.1%   1.1% 271.7KiB x11rb_protocol
-0.1%   1.1% 271.3KiB ttf_parser
-0.1%   1.1% 255.2KiB zopfli
-0.1%   1.0% 235.8KiB x11_dl
-0.1%   0.9% 216.9KiB wayland_client
-0.1%   0.9% 210.0KiB matrixmultiply
-1.5%  17.0%   4.0MiB And 130 more crates. Use -n N to show more.
-9.1% 100.0%  23.5MiB .text section size, the file size is 259.2MiB
+0.6%  38.8%   1.3MiB fj_core
+0.3%  17.6% 601.5KiB std
+0.1%   7.4% 255.2KiB zopfli
+0.1%   6.1% 210.0KiB matrixmultiply
+0.1%   4.1% 141.3KiB quick_xml
+0.1%   3.3% 112.3KiB zip
+0.0%   3.1% 105.3KiB miniz_oxide
+0.0%   1.8%  60.1KiB parry3d_f64
+0.0%   1.5%  51.1KiB fj_math
+0.0%   1.3%  43.2KiB threemf
+0.0%   1.1%  39.2KiB robust
+0.0%   1.0%  35.3KiB parking_lot
+0.0%   1.0%  34.0KiB simd_adler32
+0.0%   1.0%  33.4KiB serde_core
+0.0%   0.7%  23.7KiB parking_lot_core
+0.0%   0.6%  21.8KiB wavefront_rs
+0.0%   0.6%  19.5KiB hashbrown
+0.0%   0.5%  16.7KiB parry2d_f64
+0.0%   0.4%  13.8KiB type_map
+0.0%   0.4%  12.2KiB x11rb_protocol
+0.1%   4.9% 166.5KiB And 68 more crates. Use -n N to show more.
+1.6% 100.0%   3.3MiB .text section size, the file size is 213.1MiB
 
 Note: numbers above are a result of guesswork. They are not 100% correct and never will be.
-wink@3900x 25-11-29T19:39:10.631Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+wink@3900x 25-12-07T06:38:48.886Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
 ```
+
+### 50 segment hole
+
+```
+wink@3900x 25-12-07T06:41:57.223Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+$ ./target/release/box-with-hole 50
+Writing file: box-with-hole_segments-50.stl
+wink@3900x 25-12-07T06:42:10.491Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+$ meshlab box-with-hole_segments-50.stl
+Using OpenGL 4.6
+LOG: 0 Opened mesh box-with-hole_segments-50.stl in 59 msec
+LOG: 0 All files opened in 62 msec
+LOG: 2 V:    108 E:    324 F:   216
+LOG: 2 Unreferenced Vertices 0
+LOG: 2 Boundary Edges 0
+LOG: 2 Mesh is composed by 1 connected component(s)
+
+LOG: 2 Mesh is two-manifold
+LOG: 2 Mesh has 0 holes
+LOG: 2 Genus is 1
+LOG: 0 Applied filter: Compute Topological Measures in 148 msec
+wink@3900x 25-12-07T06:49:39.903Z:~/data/prgs/3dprinting/box-with-tri-hole/fornjot (main)
+```
+
+![box-with-hole_segments-50](./box-with-hole_segments-50.stl.png)
 
 ## License
 
