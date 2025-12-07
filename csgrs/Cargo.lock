@@ -383,13 +383,14 @@ checksum = "460fbee9c2c2f33933d720630a6a0bac33ba7053db5344fac858d4b8952d77d5"
 [[package]]
 name = "csgrs"
 version = "0.21.0"
-source = "git+https://github.com/timschmidt/csgrs.git?branch=main#82f14e3227739be1207fcebe8fae70984f9dc6ea"
+source = "git+https://github.com/timschmidt/csgrs.git?branch=main#5bc120d8e4bb6e0e25ec1a39ac56e1d319d6d0af"
 dependencies = [
  "chull",
  "contour_tracing",
  "core2",
  "doc-image-embed",
  "dxf",
+ "earcutr 0.5.0",
  "either",
  "fast-surface-nets",
  "geo",
@@ -452,6 +453,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "79127ed59a85d7687c409e9978547cffb7dc79675355ed22da6b66fd5f6ead01"
 dependencies = [
  "itertools 0.11.0",
+ "num-traits 0.2.19",
+]
+
+[[package]]
+name = "earcutr"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "afc28d89ac6cb489f679fcf51aaa62b4667bb0fb73a30f1d4d23949069707c07"
+dependencies = [
+ "itertools 0.14.0",
  "num-traits 0.2.19",
 ]
 
@@ -576,9 +587,9 @@ checksum = "3a3076410a55c90011c298b04d0cfa770b00fa04e1e3c97d3f6c9de105a03844"
 
 [[package]]
 name = "flate2"
-version = "1.1.7"
+version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2152dbcb980c05735e2a651d96011320a949eb31a0c8b38b72645ce97dec676"
+checksum = "bfe33edd8e85a12a67454e37f8c75e730830d83e313556ab9ebf9ee7fbeb3bfb"
 dependencies = [
  "crc32fast",
  "miniz_oxide",
@@ -639,7 +650,7 @@ version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "34f0e6e028c581e82e6822a68869514e94c25e7f8ea669a2d8595bdf7461ccc5"
 dependencies = [
- "earcutr",
+ "earcutr 0.4.3",
  "float_next_after",
  "geo-types",
  "geographiclib-rs",

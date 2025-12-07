@@ -129,31 +129,35 @@ wink@3900x 25-12-06T18:55:41.171Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs
 
 ## Non 2-manifold mesh
 
-Bummer, segments=5 the result is "non 2-manifold mesh" and AFAICT
-all meshes with segment-count above 7 are "non 2-manifold mesh" :(
+segments=38 the first result I found that is "non 2-manifold mesh".
+I found this using binary search starting at 50, the  non 2-manifold list is:
+`38, 40, 43, 50`
 
 ```
-wink@3900x 25-12-06T18:56:26.768Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs (main)
-$ meshlab box-with-hole_segments-5_vertices-74.stl
+wink@3900x 25-12-07T18:19:11.252Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs (main)
+$ cargo run --release 38
+    Finished `release` profile [optimized] target(s) in 0.08s
+     Running `target/release/box-with-hole 38`
+Writing file: box-with-hole_segments-38_vertices-404.stl
+wink@3900x 25-12-07T18:20:17.095Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs (main)
+$ meshlab box-with-hole_segments-38_vertices-404.stl 
 Using OpenGL 4.6
-LOG: 0 Opened mesh box-with-hole_segments-5_vertices-74.stl in 85 msec
-LOG: 0 All files opened in 99 msec
-LOG: 2 V:     28 E:     86 F:    57
+LOG: 0 Opened mesh box-with-hole_segments-38_vertices-404.stl in 57 msec
+LOG: 0 All files opened in 59 msec
+LOG: 2 V:    160 E:    480 F:   314
 LOG: 2 Unreferenced Vertices 0
-LOG: 2 Boundary Edges 2
+LOG: 2 Boundary Edges 18
 LOG: 2 Mesh is composed by 1 connected component(s)
 
-LOG: 2 Mesh has 1 non two manifold edges and 3 faces are incident on these edges
-
-LOG: 2 Mesh has 1 non two manifold vertices and 7 faces are incident on these vertices
+LOG: 2 Mesh has 1 non two manifold vertices and 4 faces are incident on these vertices
 
 LOG: 2 Mesh has a undefined number of holes (non 2-manifold mesh)
 LOG: 2 Genus is undefined (non 2-manifold mesh)
-LOG: 0 Applied filter: Compute Topological Measures in 272 msec
-wink@3900x 25-12-06T18:58:23.749Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs (main)
+LOG: 0 Applied filter: Compute Topological Measures in 282 msec
+wink@3900x 25-12-07T18:26:09.622Z:~/data/prgs/3dprinting/box-with-tri-hole/csgrs (main)
 ```
 
-![box-with-hole_segments-5_vertices-74.stl](box-with-hole_segments-5_vertices-74.stl.png)
+![box-with-hole_segments-38_vertices-404.stl](box-with-hole_segments-38_vertices-404.stl.webp)
 
 
 
